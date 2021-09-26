@@ -1,9 +1,13 @@
 import { Providers } from './Providers';
+import { Router } from '@reach/router';
+import { Calculate } from 'pages';
 
 function App() {
   return (
     <Providers>
-      <h1>School Mark Calculator</h1>
+      <Router>
+        <Calculate path="/" />
+      </Router>
     </Providers>
   );
 }
