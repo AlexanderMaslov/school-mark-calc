@@ -1,0 +1,56 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "mos.ru",
+  "dateExported": "2021-09-27T10:10:53.642Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "containerId": "",
+      "sortNum": 5000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        }
+      ],
+      "colId": "31266d39-59b0-4c7f-a3bf-d9bf1fdddde8",
+      "name": "config",
+      "url": "https://dnevnik.mos.ru/diary/config/config.json",
+      "method": "GET",
+      "modified": "2021-09-22T21:00:53.237Z",
+      "created": "2021-09-22T21:00:42.228Z",
+      "_id": "1aee2276-e2f8-4a1b-8eb1-7da6a1462048",
+      "params": [],
+      "tests": []
+    },
+    {
+      "containerId": "",
+      "sortNum": 10000,
+      "headers": [
+        { "name": "Accept", "value": "*/*" },
+        {
+          "name": "User-Agent",
+          "value": "Thunder Client (https://www.thunderclient.io)"
+        },
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI5MDE5NzQiLCJhdWQiOiIyOjIiLCJuYmYiOjE2MzIzNDM3NzcsIm1zaCI6ImIwYzYyZmE4LWE3YmMtNGQzZi04OWZlLTI5OGFhZmE5ODlkNyIsImlzcyI6Imh0dHBzOlwvXC9zY2hvb2wubW9zLnJ1IiwicmxzIjoiezI6WzIxOjI6W10sMzE6NDpbXSw0MToxOltdXX0iLCJyZ24iOmZhbHNlLCJleHAiOjE2MzMyMDc3NzcsImlhdCI6MTYzMjM0Mzc3NywianRpIjoiZGQwNzdkMWQtYzdlOS00ODIxLTg3N2QtMWRjN2U5YjgyMWYxIiwic3NvIjoiOTQwYTEzOTctMDlmYy00MjdlLTlmMDAtNzkzYTE4NGJlOTRjIn0.e92ugdfQa-l89k9H4FFaIAh9WEc8bxlMPcAvgt7CA4k-7sZasenJ7VQDU4E9vW-l-cmbRMRyCv742eGXK92PllFOfGRd-f4MBWPC_gfF6bqznF5MBWwWEj8NWyabx19jcjO2IDMgfO3nljJ_HZFxxKh_BM_2wnpQpctmOwnhaCDUOU0pPLLScCAlMSrQFYeJsxdqOKplY4ioelUesSWK8-yDU5ClO22jrDkDrduqdFYjC43FZ-eZd7TaUzLwhUSu9yJogmNFx6Gwcp2nIQB1d_by7O1rRjuKQ1DnAqXopHZ1OTlI8X6MiORNuqFTFM4_Qxvla0PUcGaqMaqYK0A6rw"
+        }
+      ],
+      "colId": "31266d39-59b0-4c7f-a3bf-d9bf1fdddde8",
+      "name": "reports",
+      "url": "https://dnevnik.mos.ru/reports/api/progress/json?academic_year_id=9&student_profile_id=5808863",
+      "method": "GET",
+      "modified": "2021-09-22T20:52:26.934Z",
+      "created": "2021-09-22T20:26:37.430Z",
+      "_id": "4576c915-31ae-48d5-8829-613ccf2d9e47",
+      "params": [
+        { "name": "academic_year_id", "value": "9", "isPath": false },
+        { "name": "student_profile_id", "value": "5808863", "isPath": false }
+      ],
+      "tests": []
+    }
+  ]
+}
