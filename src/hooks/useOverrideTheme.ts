@@ -1,6 +1,10 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, PaletteMode } from '@mui/material';
 
-export const useOverrideTheme = () => {
-  const theme = createTheme();
+interface Props {
+  mode?: PaletteMode;
+}
+
+export const useOverrideTheme = ({ mode = 'light' }: Props = {}) => {
+  const theme = createTheme({ palette: { mode } });
   return theme;
 };

@@ -2,6 +2,7 @@
   "name": "school-mark-calc",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://dnevnik.mos.ru",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
