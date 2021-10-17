@@ -12,37 +12,20 @@ import { ReportItem } from './ReportItem';
 import type { Report } from './types';
 import { schema } from './schema';
 
-interface Inputs {
-  token: string;
-  academicYearId: number;
-  studentProfileId: number;
-}
-
-interface Props extends Inputs {
+interface Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   studentProfile: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   reports: Report[];
 }
 
-export const Calculate = ({
-  token,
-  academicYearId,
-  studentProfileId,
-  studentProfile,
-  reports,
-}: Props) => {
+export const Calculate = ({ studentProfile, reports }: Props) => {
   const shortName = studentProfile?.short_name ?? '';
   const className = studentProfile?.class_unit?.name ?? '';
   const studentProfileCapton = `${shortName} "${className}"`;
 
-  const { control, handleSubmit } = useForm<Inputs>({
+  const { control, handleSubmit } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: {
-      token,
-      academicYearId,
-      studentProfileId,
-    },
   });
 
   const onSave = async (inputs: Props) => {

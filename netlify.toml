@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/reports/*"
+  to = "https://dnevnik.mos.ru/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/core/*"
+  to = "https://dnevnik.mos.ru/:splat"
+  status = 200
+  force = true
