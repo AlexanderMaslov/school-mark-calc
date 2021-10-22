@@ -1,7 +1,6 @@
 import React from 'react';
 import { useOverrideTheme } from 'hooks';
-import { ThemeProvider, Global } from '@emotion/react';
-import { global } from 'theme';
+import { ThemeProvider } from '@mui/material';
 
 interface Props {
   children: React.ReactNode;
@@ -10,10 +9,5 @@ interface Props {
 export const Providers = ({ children }: Props) => {
   const theme = useOverrideTheme();
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Global styles={global} />
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

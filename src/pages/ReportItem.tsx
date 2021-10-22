@@ -1,4 +1,4 @@
-import { useTheme } from '@emotion/react';
+import { useTheme } from '@mui/material';
 import { Grid } from '@mui/material';
 import { WiredItem } from 'react-wired-elements';
 import type { Report } from './types';

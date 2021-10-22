@@ -5,6 +5,8 @@ interface Props {
 }
 
 export const useOverrideTheme = ({ mode = 'light' }: Props = {}) => {
-  const theme = createTheme({ palette: { mode } });
+  const theme = createTheme({
+    palette: { mode },
+  });
   return theme;
 };
