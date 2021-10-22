@@ -1,16 +1,9 @@
-import { useForm, Controller } from 'react-hook-form';
-import { DevTool } from '@hookform/devtools';
-import { yupResolver } from '@hookform/resolvers/yup';
+import React from 'react';
+import { useTheme } from '@mui/material';
 import { Grid } from '@mui/material';
-import {
-  WiredInput,
-  WiredButton,
-  WiredDivider,
-  WiredItem,
-} from 'react-wired-elements';
+import { WiredDivider, WiredItem } from 'react-wired-elements';
 import { ReportItem } from './ReportItem';
 import type { Report } from './types';
-import { schema } from './schema';
 
 interface Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,58 +13,24 @@ interface Props {
 }
 
 export const Calculate = ({ studentProfile, reports }: Props) => {
+  const theme = useTheme();
+  const [sum, setSum] = React.useState(0);
+
   const shortName = studentProfile?.short_name ?? '';
   const className = studentProfile?.class_unit?.name ?? '';
   const studentProfileCapton = `${shortName} "${className}"`;
 
-  const { control, handleSubmit } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSave = async (inputs: Props) => {
-    //
-  };
-
   return (
     <>
       <Grid container spacing={1} my={1}>
-        <Grid
-          container
-          item
-          xs={12}
-          spacing={1}
-          alignItems="baseline"
-          justifyContent="space-between"
-        >
-          <Grid container item xs={6} spacing={1} alignItems="baseline">
-            <Grid item>
-              <WiredItem>Токен</WiredItem>
-              <Controller
-                name="token"
-                control={control}
-                render={({ field }) => (
-                  <WiredInput
-                    {...field}
-                    placeholder="Введите значение"
-                    type="text"
-                  />
-                )}
-              />
-            </Grid>
-            <Grid item>
-              <WiredButton
-                // @ts-ignore
-                onClick={handleSubmit(onSave)}
-              >
-                Обновить
-              </WiredButton>
-            </Grid>
-          </Grid>
-          <Grid container item xs={6} justifyContent="flex-end">
-            <WiredItem value="academic_year_id">
-              {studentProfileCapton}
-            </WiredItem>
-          </Grid>
+        <Grid container item xs={12} justifyContent="space-between">
+          <WiredItem
+            color={theme.palette.info.main}
+            style={{ fontSize: 22, fontWeight: 'bold' }}
+          >
+            Сумма: {sum} руб.
+          </WiredItem>
+          <WiredItem>{studentProfileCapton}</WiredItem>
         </Grid>
         <Grid item xs={12}>
           <WiredDivider />
@@ -85,11 +44,10 @@ export const Calculate = ({ studentProfile, reports }: Props) => {
               xs={12}
               key={`${report?.subject_name ?? 'report'}-${index}`}
             >
-              <ReportItem {...report} />
+              <ReportItem {...report} setSum={setSum} />
             </Grid>
           ))}
       </Grid>
-      <DevTool control={control} />
     </>
   );
 };

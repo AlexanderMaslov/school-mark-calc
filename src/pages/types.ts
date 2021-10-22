@@ -1,3 +1,10 @@
+export interface PreparedMarks {
+  5: number;
+  4: number;
+  3: number;
+  2: number;
+}
+
 export interface Report {
   avg_five: string;
   avg_hundred: string;
