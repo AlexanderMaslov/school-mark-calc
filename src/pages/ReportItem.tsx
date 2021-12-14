@@ -5,6 +5,9 @@ import { WiredItem } from 'react-wired-elements';
 import type { Report, PreparedMarks } from './types';
 import { rule } from './utils';
 
+const ACADEMIC_PERIOD: number =
+  Number(process.env.REACT_APP_ACADEMIC_PERIOD) ?? 0;
+
 interface Props extends Report {
   setSum: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -16,7 +19,7 @@ export const ReportItem = ({
 }: Props) => {
   const theme = useTheme();
 
-  const marks = periods[0]?.marks ?? [];
+  const marks = periods[ACADEMIC_PERIOD]?.marks ?? [];
   const preparedMarks = marks.reduce(
     (prev, curr) => {
       const value = curr.values[0].five;
